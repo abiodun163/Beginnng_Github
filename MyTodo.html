@@ -1,0 +1,76 @@
+<script>
+        var MyTodo =
+        ["gym", "wash up", "do chores", "work from home"
+            /*
+            {todo: "gym"},
+            {todo: "wash up"},
+            {todo: "do chores"},
+            {todo: "work from home"},
+            */
+        ];
+
+
+        function AddOrRemove(request, todo, value)
+        {
+            
+            if(request === "add")
+            {
+            //MyTodo["todo"] = value;
+            MyTodo.push(value);
+            console.log("Updated List:");
+                for(values of MyTodo)
+                {
+                    console.log("* " + values);
+                }
+            }
+            
+            else if(request === "remove")
+            {
+                if(value < 0 || value > MyTodo.length)
+                {
+                    return "List Not Found"; 
+                }
+                else 
+                {
+                    delete MyTodo[value];
+                    //let save = MyTodo[value - 1]["todo"];
+                    //delete save;
+                    console.log("Updated List:");
+                    for(values of MyTodo)
+                    {
+                        console.log("* " + values);
+                    }
+                    //console.log(save);
+                }
+            }     
+        }
+
+
+        let value;
+        let user_prompt;
+        do
+        {
+            user_prompt = prompt(`ADD OR REMOVE LIST:`).toLowerCase();
+        }
+        while(user_prompt !== "add" && user_prompt !== "remove");
+
+        if(user_prompt === "add")
+        {
+            value = prompt(`ENTER NEW LIST:`).toLowerCase();
+            console.log(AddOrRemove(user_prompt, "todo", value));
+            console.log(`list created`);
+        }
+
+        else
+        {
+            let place;
+           // console.log(MyTodo);
+            do
+            {
+                place = prompt(`Signify with number:`);
+            }
+            while(isNaN(place) || place === "");
+            console.log(AddOrRemove(user_prompt, "todo", place));
+        }
+
+    </script>

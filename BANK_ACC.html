@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <style>
+        body {
+            background-color: rgb(109, 109, 204);
+        }
+            .all_flex {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            .together {
+                display: flex;
+            }
+
+            .u_name {
+               font-weight: bold;
+            }
+
+            .serach_box {
+                display: flex;
+                flex:1;
+               margin-left: 10px; 
+            }
+
+            .user_name_box {
+                max-width:250px;
+                flex:1;
+                padding-left: 10px;
+                border-color: rgb(88, 87, 87);
+                border-style:solid;
+                border-width: 2px;
+                border-radius: 20px;
+               padding-top: 8px;
+               padding-bottom: 8px;
+               cursor: pointer;
+            }
+
+            .EN_KEY {
+                display: flex;
+                flex: 1;
+            }
+
+            .enter_key {
+                flex: 1;
+                max-width: 100px;
+                border-radius: 3px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                border:none;
+                color:white;
+                background-color: blue;
+                cursor: pointer;
+                margin-left: 20px;
+                transition: opacity 0.15s, box-shadow 0.15s;
+            }
+
+            .enter_key:hover {
+               opacity: 0.9;
+               box-shadow: 7px 7px 10px rgba(3, 3, 3, 0.15);
+            }
+
+        .enter_key:active {
+            opacity: 0.8;
+        }
+
+        .recover {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .recovery {
+            display: flex;
+            flex: 1;
+            column-gap: 150px;
+        }
+
+        .forgot_password {
+            
+            align-items: center;
+            color:rgb(15, 15, 189);
+        }
+
+        .forgot_password:hover {
+            color: red;
+        }
+
+        .sign_up_section {
+            flex: 1;
+            
+            align-items: center;
+            color:rgb(15, 15, 189);
+            display: flex;
+        }
+
+        .sign_up {
+            color:rgb(15, 15, 189);
+        }
+
+        .sign_up:hover {
+            color: red;
+        }
+       </style>
+    </head>
+    <body>
+       <div class="all_flex">
+        <div class="together">
+            <p class="u_name">
+                USERNAME:
+            </p>
+        </div>
+        <div class="serach_box">
+            <input class="user_name_box" type="text" placeholder="USERNAME">
+        </div>
+        <div class="EN_KEY">
+            <button class="enter_key">
+                ENTER
+            </button>
+        </div>   
+    </div> 
+
+            <div class="all_flex">
+            <div class="together">
+                <p class="u_name">
+                    PASSWORD:
+                </p>
+            </div>
+            <div class="serach_box">
+                <input class="user_name_box" type="password" placeholder="PASSWORD">
+            </div>
+            <div class="EN_KEY">
+                <button class="enter_key">
+                    ENTER
+                </button>
+        </div>
+       </div>
+
+       <div class="recover">
+       <div class="recovery">
+        <a href ="">
+            <span class="forgot_password">
+                forgot password
+            </span> 
+        </a>    
+       </div>
+            <div class="sign_up_section">
+                <a href="">
+                    <span class="sign_up">
+                        Sign Up
+                    </span>
+                </a>
+                
+            </div>
+       </div>
+        
+    </body>
+</html>

@@ -1,0 +1,123 @@
+<script>
+    var dog = {
+        "f_name": 'Jerry',
+        "legs": '4',
+        "tails": '1',
+        "his story": 'sad',
+        "friends": [['camper'], ['quincy']]
+    };
+    // WAYS TO CALL AN OBJECT.
+    // USING DOT,FOR VALUES WITHOUT SPACE
+
+    let dog_name = dog.f_name;
+    console.log(dog_name);
+
+    // USING [''] FOR OBJECTS WITH SPACE BETWEEN THEM.
+    
+    let story = dog['his story'];
+    console.log(story);
+</script>
+
+<script>
+    var dog = {
+        "f_name": 'Jerry',
+        "legs": '4',
+        "tails": '1',
+        "his story": 'sad',
+        "friends": [['camper'], ['quincy']]
+    };
+
+    dog.f_name = "lucky";
+    dog['bark'] = ["bow-bow", "woof!"];
+    console.log(dog);
+    
+    delete dog.bark;
+</script>
+
+<script>
+    var musician = {
+        "artist": 'Billy Joel',
+        "title": 'piano man',
+        "release_year": '1973',
+        "formats": ["CD", "8T", "LP"],
+        "gold": true,
+    }
+</script>
+
+<script>
+    var myStorage = {
+        "car": {
+            "inside": {
+                "glove box": 'map',
+                "passenger": 'crumbs'
+            },
+            "outside": {
+                "trunk":'jack'
+            }
+        }
+    };
+
+
+    var gloveBoxContent = myStorage.car.inside["glove box"];
+    console.log(gloveBoxContent);
+</script>
+
+
+<script>
+    
+    var myplants = [
+        {
+           type: "flowers",
+           list: [
+            "rose",
+            "tulip",
+            "dandelion"
+           ] 
+        },
+
+        {
+            type: "trees",
+            list: [
+                "fir",
+                "pine",
+                "birch"
+           ] 
+        }
+    ];
+
+
+    var secondtree = myplants[0].list[2];
+    console.log(secondtree);
+</script>
+
+
+<script>
+    let absence = [9,10,11,12];
+    let total = 0;
+
+    for(var i = 0; i < absence.length; i++) {
+        total += absence[i];
+
+        console.log(total);
+    }
+</script>
+
+
+<script>
+    function multiplyall(arr) {
+        var product =1;
+
+        for(var i = 0; i < arr.length; i++) {
+            for(var j = 0; j < arr[i].length; j++) {
+                product *= arr[i][j];
+            }
+        }
+
+        return product;
+    }
+
+    var product = multiplyall([[1, 2],[3, 4],[5, 6, 7]]);
+
+    console.log(product); 
+</script>
+

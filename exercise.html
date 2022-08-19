@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <button>
+            Up
+        </button>
+        <button>
+            Down
+        </button>
+        
+        <script>
+
+            console.log('Balogun Rosheed Abiodun.');
+/* 
+          Use the parseInt Function with a Radix
+          The parseInt() function parses a string and returns an integer. 
+          It takes a second argument for the radix, 
+          which specifies the base of the number in the string.
+           The radix can be an integer between 2 and 36.
+
+          The function call looks like:
+
+          parseInt(string, radix);
+          And here's an example:
+
+          const a = parseInt("11", 2);
+          The radix variable says that 11 is in the binary system,
+           or base 2. This example converts the string 11 to an integer 3.
+           //////////////////////
+           function convertToInteger(str, radix) {
+          return parseInt(str, radix);
+          }
+
+          console.log(convertToInteger("10011", 2));
+          console.log(convertToInteger("111001", 2));
+*/
+
+            var recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+  if (prop !== 'tracks' && value !== "") {
+    records[id][prop] = value;
+  } else if (prop === "tracks" && records[id].hasOwnProperty("tracks") === false) {
+    records[id][prop] = [value];
+  } else if (prop === "tracks" && value !== "") {
+    records[id][prop].push(value);
+  } else if (value === "") {
+    delete records[id][prop];
+  }
+  return records;
+}
+
+console.log(updateRecords(recordCollection, 5439, 'artist', 'ABBA'));
+console.log(updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me"));
+console.log(updateRecords(recordCollection, 2548, "artist", ""));
+console.log(updateRecords(recordCollection, 1245, "tracks", "Addicted to Love"));
+console.log(updateRecords(recordCollection, 2468, "tracks", "Free"));
+console.log(updateRecords(recordCollection, 2548, "tracks", ""));
+console.log(updateRecords(recordCollection, 1245, "albumTitle", "Riptide"));
+
+
+
+         /*Math.floor(Math.random() * 20);
+         console.log(randomWholeNum());
+          console.log(randomWholeNum());
+          console.log(randomWholeNum());
+          console.log(randomWholeNum());
+      /////////////////////////////
+          let product = 10;
+          let random = Math.random();
+          random *= product;
+          Math.floor(random);
+
+          console.log(Math.floor(random));
+          console.log(Math.floor(random));
+          console.log(Math.floor(random));
+          console.log(Math.floor(random));
+          console.log(Math.floor(random));
+          \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+          const a = parseInt("007");
+         // The above function converts the string 007 to the integer 7. 
+         // If the first character in the string can't be converted into a number,
+         // then it returns NaN.
+
+/////////////////////////////////////////
+          function randomRange(myMin, myMax) {
+            // Only change code below this line
+            return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+            // Only change code above this line
+          }
+
+          console.log(randomRange(100000000,999999999));
+          console.log(randomRange(100000000,999999999));
+          console.log(randomRange(100000000,999999999));
+          console.log(randomRange(100000000,999999999));
+          console.log(randomRange(100000000,999999999));
+
+
+
+         /////////////////////////////
+         function randomFraction() {
+
+  // Only change code below this line
+let random = Math.random();
+  return random;
+
+  // Only change code above this line
+}
+
+console.log(randomFraction())
+         
+         
+         
+         
+         
+         
+         
+         const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  // Only change code below this line
+
+  for (let x = 0; x < contacts.length; x++) {
+    if (contacts[x].firstName === name) {
+      if (contacts[x].hasOwnProperty(prop)) {
+        return contacts[x][prop];
+      } else {
+        return "No such property";
+      }
+    }
+  }
+  return "No such contact";
+
+  // Only change code above this line
+}
+
+console.log(lookUpProfile("Akira", "likes"));
+console.log(lookUpProfile("Kristian", "lastName"));
+console.log(lookUpProfile("Sherlock", "likes"));
+console.log(lookUpProfile("Harry", "likes"));
+console.log(lookUpProfile("Bob", "number"));
+console.log(lookUpProfile("Bob", "potato"));
+console.log(lookUpProfile("Akira", "address"));
+         
+         
+         
+         
+         
+         
+         /////////////////////////////////
+         function sum(arr, n) {
+  // Only change code below this line
+
+  if(n <= 0) {
+    return 0;
+  } else {
+    return sum(arr, n - 1) + arr[n - 1];
+  }
+
+  
+    the return statement of sum([2,3,4,5],3) is sum([2,3,4,5],2 + arr[2] and arr[2] is equal to 4
+    so that line is sum([2,3,4,5],2) + 4
+
+  // Only change code above this line
+}
+
+
+console.log(sum([1], 0));
+console.log(sum([2, 3, 4], 1));
+console.log(sum([2, 3, 4, 5], 3));
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         const arr = [10, 9, 8, 7, 6];
+
+                for (let i = 0; i < arr.length; i++) {
+                console.log(arr[i]);
+}
+         
+         /////////////////////////
+         for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                console.log(arr[i][j]);
+  }
+}
+         //////////////////////////
+         
+         let count = 0;
+        
+        function cc(card) {
+          // Only change code below this line
+          switch (card) {
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+              count++;
+              break;
+            case 10:
+            case "J":
+            case "Q":
+            case "K":
+            case "A":
+              count--;
+              break;
+          }
+          if (count > 0) {
+            return count + " Bet";
+          } else {
+            return count + " Hold";
+          }
+          // Only change code above this line
+        }
+        
+        console.log(cc(2)); console.log(cc(3)); console.log(cc(7)); console.log(cc('K')); console.log(cc('A'));
+       */ </script>
+        
+        <script>/*
+            function checkObj(obj, checkProp) {
+            // Only change code below this line
+            var myObj = obj;
+          if(myObj.hasOwnProperty(checkProp)) {
+            return myObj[checkProp];
+          }
+          else{
+            return "Not Found";
+          }
+            
+            // Only change code above this line
+          }
+          
+          console.log(checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift"));
+          console.log(checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet"));
+          console.log(checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house"));
+          console.log(checkObj({city: "Seattle"}, "city"));
+          console.log(checkObj({city: "Seattle"}, "district"));
+          console.log(checkObj({pet: "kitten", bed: "sleigh"}, "gift"));
+
+
+
+            let Month = 'january';
+            let DayOfMonth = 16;
+            let Year = 2020;
+        
+            let today_date = Month + ' ' +  DayOfMonth  + ' ' + Year;
+        */
+        </script>
+        
+        <script>/*
+            let variable1 = 4 + 5 * 3 ;
+            console.log(variable1);
+        
+            let variable2 = (4 + 5) * 3 ;
+            console.log(variable2); */
+        </script>
+        
+        <script>/*
+            let Age = 20;
+            let Message = 'I am ' + Age + ' years old';
+            console.log(Message); */
+        </script>
+        
+        <script>/*
+                function greetings(FirstName) {
+                    console.log("hello," + FirstName);
+                }
+                
+               greetings('Balogun'.toUpperCase()); */
+               
+        </script>
+        
+         <script> 
+           /*
+
+           function rangeOfNumbers(startNum, endNum) {
+            return startNum === endNum
+              ? [startNum]
+              : [...rangeOfNumbers(startNum, endNum - 1), endNum ];
+}
+
+                ///////////////////////////////////////////////
+                const sum = (...args) => {
+                  return args.reduce((a, b) => a + b, 0);
+                }
+                console.log(sum(2, 4, 6)); 
+                console.log(sum(0,1,2));
+                console.log(sum(1,2,3,4));
+                console.log(sum(5));
+                console.log(sum());
+
+
+
+                ////////////////////////////////
+
+          function ispalindrome(input) {
+            //define the base-case / stopping condition
+            if ( input.length == 0 || input.length == 1) {
+              return true;
+            }
+
+            //do some work to shrink the problem space
+            if (input.chartAt(0) == input.chartAt(input.length - 1)) {
+              return ispalindrome(input.substring(1, input.length - 1));
+            }
+
+            //additional base-case to handle non-palindromes
+            return false;
+          }
+
+          console.log(ispalindrome("KAYAK"));
+           
+        
+          
+            while(help !== "sign in" && help !== "login"){
+                var help = prompt("SIGN IN OR LOGIN:");
+            }
+        
+           function prompt_user (prompt) {
+                let answer;
+               answer = prompt(prompt);
+               return answer;
+            };
+
+
+            */////////////////////////////
+            function countup(n) {
+                  if (n < 1) {
+                    return [];
+                  } else {
+                    const counterarray = countup(n - 1);
+                    counterarray.push(n);
+                    return counterarray;
+                  }
+                }
+                console.log(countup(5));
+
+                ////////////////////////
+                function countdown(n){
+                  
+                    
+                  
+                return n < 1 ? [] : [n, ...countdown(n - 1)];
+                }
+                // Only change code above this line
+                console.log(countdown(-1));
+                console.log(countdown(10));
+                console.log(countdown(5));
+
+             
+
+             var customers_details = {
+             customers_first_name: ["ROSHEED", "AYOMIDE", "ZAINAB", "CHO"],
+             customers_last_name: ["BALOGUN","AKIN", "OLANREWAJU", "PARK"],
+             customers_other_name: ["ABIODUN", "IDOWU", "TAWA", "ELIZABETH"],
+             customers_password: [1234, 4567, 8910, 1112],
+             customers_age: [20, 19, 27, 21],
+             customers_email_verification:
+            [
+                "abiodunbalo163", "akin111", 
+                "teegirl06", "cho_star"
+            ],
+             customers_phone_number: ["08142570256", "07081729112", "09023550291", "08045678910"]
+           };
+          // function updateCustomer_details(details, prop, value) {
+        
+            
+           
+          /* LOOPING THROUGH THE OBJECT(customers_details) AND PROPERTY(prop)
+              CHECKING IF THE INPUT(value) ENTERED BY THE USER IS FOUND IN THE PROPERY
+              AND IF ANY OF THE PROPERTY EQUALS "customers_email_verification" OR "customers_phone_number"
+           
+        
+         //   for(e = 0; e < customers_details[prop].length; e++) {
+         if(customers_details.hasOwnProperty(prop) && customers_details[prop].hasOwnProperty(value) ){
+       //   if(prop === "customers_email_verification" && prop === "customers_phone_number") {
+          return prop + " Already In Use!.";
+         }
+         else {
+          return customers_details[prop] = [value];
+            }
+         // }
+        //} 
+        console.log(updateCustomer_details(customers_details, "customers_email_verification", "abiodunbalo163"));
+          
+    };
+            var first_name;
+            var last_name;
+            var other_name;
+            var password; 
+            var age;
+            var email_verification;
+            var phone_number;
+
+            email_verification = prompt("Email:");
+        
+      //   console.log(updateCustomer_details(customers_details, "customers_email_verification", email_verification));
+          
+           /* const review = prompt("ENTER SOMETHNG:");
+
+    if (review.length == 4 && !isNaN(review)) {
+        console.log("successful");
+    }
+    else{
+        console.log("maximum length should be 4");
+    } */
+          
+          /*
+
+          
+          
+          
+          do
+            {
+                help = prompt("SIGN UP OR LOGIN: ");
+            } 
+            while (!isNaN(help) && help === "" && help !== "sign up" && help !== "login" ); 
+          
+            if (help == "sign up") 
+            {
+                do
+                {
+                    first_name = prompt("ENTER FIRST NAME:");
+                }
+                while (!isNaN(first_name) && first_name === "");
+        
+                console.log(first_name);
+                do
+                {
+                    last_name = prompt("ENTER LAST NAME:");
+                }
+                while (!isNaN(last_name) && last_name === "");
+        
+                console.log(last_name);
+        
+                do
+                {
+                    other_name = prompt("ENTER OTHER NAME:");
+                }
+                while (!isNaN(other_name) && other_name === "");
+        
+                console.log(other_name);
+        
+                do
+                {
+                    age = prompt("ENTER AGE:");
+                    if(age < 18 && age > 80){
+                      console.log("Sorry you are not eligible.");
+                    }
+                }
+                while (isNaN(age) && age === "" );
+        
+                console.log(age);
+        
+               
+        
+                do
+                {
+                    email_verification = prompt("ENTER EMAIL:");
+                }
+                while (!isNaN(email_verification) && email_verification === "");
+        
+                console.log(email_verification);
+        
+                console.log("EMAIL VERIFIED!");
+        
+                
+        
+                do
+                {
+                    phone_number = prompt("ENTER PHONE NUMBER:");
+                }
+                while (isNaN(phone_number) && phone_number === "");
+        
+                console.log(phone_number);
+        
+                do
+                {
+                   
+                    password = prompt("ENTER PASSWORD (max 4 numbers):");
+                    
+                }
+                while (isNaN(password));
+        
+                console.log(password);
+        
+                do
+                {
+                    confirm_password = prompt("CONFIRM ENTER PASSWORD (max 4 numbers):");
+                }
+                while (confirm_password !== password);
+        
+                console.log(confirm_password);
+        
+        
+                console.log("SIGNED UP");
+        
+        
+            }
+        
+            else if (help == "login") {
+                console.log("LOGGED IN");
+            }
+          
+           console.log('work done'); 
+        
+           var logo = {
+                name: "ayo",
+                features: "leg",
+                cust_password: [1234, 5678]
+            };
+        
+            var save = logo["name"];
+            console.log(logo["cust_password"].includes(1234));
+            console.log(save);
+            
+
+            var password;
+           
+            do
+            {
+        
+                password = prompt('PASSWORD:');
+                
+            }
+            while (isNaN(password) && password.length !== 4);
+            console.log(password);
+           
+                 
+            console.log("work done");
+             // customers_details
+             */
+         </script>
+
+         <script>
+            const ourPets = [
+                {
+                animalType: "cat",
+                names: [
+                    "Meowzer",
+                    "Fluffy",
+                    "Kit-Cat"
+                ]
+                },
+                {
+                animalType: "dog",
+                names: [
+                    "Spot",
+                    "Bowser",
+                    "Frankie"
+                ]
+                }
+                ];
+                for (let x = 0; x < ourPets.length; x++) {
+                  for (let i = 0; i < ourPets[x].names.length; i++) {
+                      
+                    if (ourPets[x].names[i] === "Frankie") {
+                      
+                        console.log(ourPets[x].names[i]);
+                      } 
+                    
+                    else {
+                         console.log("No such property");
+                      }
+                  }
+                    }
+
+                    password = prompt("ENTER PASSWORD:");
+
+                  if(password.length !== 4){
+                  console.log("wrong");
+                  }
+                  else{
+                  console.log("right");
+                  }
+              // console.log(ourPets[0].names[1]);
+              // console.log(ourPets[1].names[0]);
+         </script>
+        <script>
+
+
+          //recursion STRING REVERSAL
+          //substring() removes the first letter or
+          // element from the sentence and prints out the remaining letters/element
+          // and adds the first character in the input argument to the empty string
+          function reverseString(input) {
+            if(input == "")
+                {
+                  return "";
+                }
+                return reverseString(input.substring(1)) + input.charAt(0);
+                //reverseString("ello") + h;      step 5;
+                //reverseString("llo") + e;     step 4;
+                //reverseString("lo") + l;    step 3;
+                //reverseString("o") + l;    step 2;
+                //reverseString("") + o;    step 1;
+                //after this the computer then concatenates the empty string
+                // and the input.chartAt(),which are o,l,l,e,h...starting from where the base code equals true.
+          }
+
+          console.log(reverseString("experience"));
+          console.log(reverseString("muller"));
+
+////////////////////////////////////////
+        // RECURSION STRING OUTPUT == LLO WORLD!
+        //substring() removes the first letter or
+        // element from the sentence and prints out the remaining letters/element
+                let text = "Hello world!";
+                let result = text.substring(1);
+                console.log(result);
+
+                function skill(arr, arr2) {
+                    return (arr == arr2) ? [arr] : [ ...skill(arr, arr2 - 1), arr2]
+                  }
+           
+                  console.log(skill(5, 10));
+        </script>
+        <script>
+          //  SPREAD OPERATORS  (...) 3 dots.
+          //Add an array to a new array
+          var certsToAdd = ['Algorithm and data structures', 'Front End Libaries'];
+          var names = [ 'ayo', 'glory', ...certsToAdd, 'mark', 'gloria', 'fellicia'];
+          console.log(names);
+
+          //pass element of an array as argument to a function
+          function addthreenumbers(x, y, z) {
+            console.log(x + y + z);
+          }
+          var args = [0, 1, 2];
+          addthreenumbers(...args);
+
+          // copy arrays
+          var arr = [1, 2, 3];
+          var arr2 = [...arr];
+          arr2.push(4);
+          console.log(arr);
+          console.log(arr2);
+
+          // concatenate array
+          var arr1 = [0, 1, 2];
+          var arr2 = [3, 4, 5];
+          arr1.concat(arr2);
+          arr1 = [ ...arr1, ...arr2];
+          console.log(arr1);
+
+          // REST OPERATOR 3(...) DOTS
+          //spread operator spreads or expands an array into its elements
+          //rest operator collects mulltiple elements and condenses into a single array element
+           // MAP EXAMPLES
+          function multiply(multiplier, ...args) {
+            return args.map(function(element) {
+              return multiplier * element;
+            // return element + " great!.";
+            });
+          }
+          console.log(multiply([1, 2, 3, 4, 5]));
+
+          function moarr (collect, molest) {
+            return(molest == collect) ? [collect] :  [ ...moarr(collect, molest - 1), molest];
+          }
+
+          console.log(moarr(20, 30));
+
+
+          // MAP EXAMPLES 
+          const persons = [
+              {firstname : "Malcom", lastname: "Reynolds"},
+              {firstname : "Kaylee", lastname: "Frye"},
+              {firstname : "Jayne", lastname: "Cobb"}
+            ];
+
+            persons.map(getFullName);
+
+            function getFullName(item) {
+              return [item.firstname,item.lastname].join(" ");
+            }
+
+           // Method Reuse
+               // With the apply() method, you can write a method that can be used on different objects.
+
+               // The JavaScript apply() Method
+               // The apply() method is similar to the call() method (previous chapter).
+
+              //  In this example the fullName method of person is applied on person1:
+
+              //  Example
+                let person = {
+                  fullName: function() {
+                    return this.firstName + " " + this.lastName;
+                  }
+                }
+
+                let person1 = {
+                  firstName: "Mary",
+                  lastName: "Doe"
+                }
+
+                // This will return "Mary Doe":
+                person.fullName.apply(person1);
+
+                </script>
+                <script>
+                ///////////////////////////////
+                 person = {
+                    fullName: function(city, country) {
+                      return this.firstName + " " + this.lastName + "," + city + "," + country;
+                    }
+                  }
+
+                   person1 = {
+                    firstName:"John",
+                    lastName: "Doe"
+                  }
+
+                  person.fullName.apply(person1, ["Oslo", "Norway"]);
+        </script>
+    </body>
+</html>
+
